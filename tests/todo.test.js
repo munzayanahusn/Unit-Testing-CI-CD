@@ -105,4 +105,32 @@ describe('Todo API', () => {
       })
     })
   })
+
+  describe('PUT /todos/:id', () => {
+    it('should return update todo by id', (done) => {
+      // Arrange
+      const id = 10
+      const data = {
+        "title":"ToDO 10 Updated"
+      }
+
+      // Act
+      request(app)
+      .put(`/todos/${id}`)
+      .send(data)
+      .end((err, res) => {
+        if(err) {
+          done(err)
+          return
+        }
+
+        // Assert
+        console.log(res)
+        expect(res.body.title).toEqual('ToDO 10 Updated')
+        expect(res.status).toEqual(200)
+
+        done()
+      })
+    })
+  })
 })
