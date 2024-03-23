@@ -48,9 +48,23 @@ async function deleteTodo (req, res) {
   }
 }
 
+async function updateTodo (req, res) {
+  try {
+    const todo = await Todo.findByPk(req.params.id);
+    if (!todo) {
+      return res.status(404).json({ message: 'Todo not found' });
+    }
+    await todo.update(req.body);
+    res.json(todo);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
+
 module.exports = {
   listAllTodos,
   detailTodo,
   createTodo,
-  deleteTodo
+  deleteTodo,
+  updateTodo
 };
