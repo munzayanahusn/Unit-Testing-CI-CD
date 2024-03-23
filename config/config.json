@@ -19,5 +19,13 @@
     "database": "",
     "host": "127.0.0.1",
     "dialect": "postgres"
+  },
+  "docker": {
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
+    "dialect": "postgres",
+    "port": "5439"
   }
 }
