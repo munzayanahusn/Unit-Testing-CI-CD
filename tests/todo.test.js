@@ -8,7 +8,7 @@ describe('Todo API', () => {
     it('should return new todos', (done) => {
       // Arrange
       const data = {
-        "title":"ToDO 10"
+        "title":"ToDO 30"
       }
 
       // Act
@@ -23,7 +23,7 @@ describe('Todo API', () => {
 
         // Assert
         console.log(res)
-        expect(res.body.title).toEqual('ToDO 10')
+        expect(res.body.title).toEqual('ToDO 30')
         expect(res.status).toEqual(201)
 
         done()
@@ -61,7 +61,7 @@ describe('Todo API', () => {
   describe('GET /todos/:id', () => {
     it('should return todo by id', (done) => {
       // Arrange
-      const id = 10
+      const id = 6
 
       // Act
       request(app)
@@ -74,7 +74,7 @@ describe('Todo API', () => {
 
         // Assert
         console.log(res)
-        expect(res.body.title).toEqual('ToDO 10')
+        expect(res.body.title).toEqual('ToDO 6')
         expect(res.status).toEqual(200)
 
         done()

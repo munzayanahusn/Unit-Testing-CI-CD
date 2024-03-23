@@ -1,3 +1,5 @@
+const config = require('./config');
+
 const express = require('express');
 const routes = require('./routes');
 const PORT = 3000;
